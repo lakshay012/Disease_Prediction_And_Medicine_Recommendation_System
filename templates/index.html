@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Disease Prediction and Medicine Recommendation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+    <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
+  </head>
+  <body class="bg-gradient-to-r from-blue-300 to-blue-950">
+    <div
+      class="flex flex-row md:p-6 md:p-12 items-center justify-around sm:justify-between w-screen"
+    >
+      <div class="flex items-center text-white p-4 sm:p-0">
+        <img
+          src="{{ url_for('static', filename='logo2.png') }}"
+          class="fill-current lg:h-12 lg:w-12 w-8 h-8 mr-2"
+        />
+        <span class="font-semibold leading-tight md:text-base lg:text-xl"
+          >Medicine <br />Recommendation</span
+        >
+      </div>
+      <nav
+        class="hidden md:flex items-center justify-evenly lg:text-xl md:gap-x-6 lg:gap-x-10 text-base text-slate-50"
+      >
+        <a href="#"> Home </a>
+        <a href="/about"> About </a>
+        <a href="/developer"> Developer </a>
+      </nav>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="sm:hidden"
+        onclick="show()"
+        x="0px"
+        y="0px"
+        width="24"
+        height="24"
+        viewBox="0,0,256,256"
+      >
+        <g
+          fill="#ffffff"
+          fill-rule="nonzero"
+          stroke="none"
+          stroke-width="1"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-miterlimit="10"
+          stroke-dasharray=""
+          stroke-dashoffset="0"
+          font-family="none"
+          font-weight="none"
+          font-size="none"
+          text-anchor="none"
+          style="mix-blend-mode: normal"
+        >
+          <g transform="scale(10.66667,10.66667)">
+            <path
+              d="M3,5c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h18c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587zM3,11c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h18c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587zM3,17c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h18c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587z"
+            ></path>
+          </g>
+        </g>
+      </svg>
+      <nav
+        class="sm:hidden flex z-50 flex-col gap-y-6 text-base text-slate-50 bg-slate-950 w-1/2 h-screen absolute top-0 right-0 items-center pt-8"
+        id="menu"
+      >
+        <h1 class="text-slate-50" onclick="show()">X</h1>
+        <a href="#"> Home </a>
+        <a href="/about"> About </a>
+        <a href="/developer"> Developer </a>
+      </nav>
+    </div>
+
+    <div class="flex md:flex-row flex-col md:h-96 w-full mb-8 sm:m-0" id="con">
+      <div class="flex items-center flex-col">
+        <img
+          src="{{ url_for('static', filename='doc2.png') }}"
+          alt="asd"
+          class="h-full sm:ml-12 sm:border-r-4 sm:border-neutral-50"
+        />
+        <form
+          action="/predict"
+          method="post"
+          class="flex flex-col items-center w-full"
+        >
+          <div class="form-group">
+            <input
+              class="p-2 border-2 border-gray-500 rounded-lg w-full"
+              type="text"
+              id="symptoms"
+              name="symptoms"
+              placeholder="Type symptoms such as itching, sleeping, aching etc"
+            />
+            
+          </div>
+          <br>
+
+          <button
+            type="submit"
+            class="border-2 text-slate-50 text-xl rounded-lg p-2 px-2"
+          >
+            Predict
+          </button>
+          <p class="text-red-500">{{message}}</p>
+        </form>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="sm:ml-12 sm:p-0 px-4 text-slate-50">
+          <h1 class="text-3xl">Predicted Disease</h1>
+          <p class="text-6xl p-4 border-neutral-50 border-b-4">
+            {{ predicted_disease }}
+          </p>
+        </div>
+        <h1 class="text-3xl text-slate-50 py-2 px-4">Medications</h1>
+        <ul class="text-base sm:text-xl text-slate-50 p-4">
+          {% for i in medications %}
+          <li>{{ i }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      let menu = document.getElementById("menu");
+      function show() {
+        menu.classList.toggle("hidden");
+        
+      }
+    </script>
+  </body>
+</html>

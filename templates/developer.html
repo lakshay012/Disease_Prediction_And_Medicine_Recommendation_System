@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Developer</title>
+  </head>
+  <body class="bg-gradient-to-r from-blue-300 to-blue-950 relative z-0">
+    <div
+      class="flex flex-row md:p-6 md:p-12 items-center justify-around sm:justify-between w-screen"
+    >
+      <div class="flex items-center text-white p-4 sm:p-0">
+        <img
+          src="{{ url_for('static', filename='logo2.png') }}"
+          class="fill-current lg:h-12 lg:w-12 w-8 h-8 mr-2"
+        />
+        <span class="font-semibold leading-tight md:text-base lg:text-xl"
+          >Medicine <br />Recommendation</span
+        >
+      </div>
+      <nav
+        class="hidden md:flex items-center justify-evenly lg:text-xl md:gap-x-6 lg:gap-x-10 text-base text-slate-50"
+      >
+        <a href="/"> Home </a>
+        <a href="/about"> About </a>
+        <a href="#"> Developer </a>
+      </nav>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        onclick="show()"
+        class="sm:hidden"
+        x="0px"
+        y="0px"
+        width="24"
+        height="24"
+        viewBox="0,0,256,256"
+      >
+        <g
+          fill="#ffffff"
+          fill-rule="nonzero"
+          stroke="none"
+          stroke-width="1"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-miterlimit="10"
+          stroke-dasharray=""
+          stroke-dashoffset="0"
+          font-family="none"
+          font-weight="none"
+          font-size="none"
+          text-anchor="none"
+          style="mix-blend-mode: normal"
+        >
+          <g transform="scale(10.66667,10.66667)">
+            <path
+              d="M3,5c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h18c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587zM3,11c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h18c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587zM3,17c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h18c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587z"
+            ></path>
+          </g>
+        </g>
+      </svg>
+      <nav
+        class="sm:hidden flex z-50 flex-col gap-y-6 text-base text-slate-50 bg-slate-950 w-1/2 h-screen absolute top-0 right-0 items-center pt-8"
+        id="menu"
+      >
+        <h1 class="text-slate-50" onclick="show()">X</h1>
+        <a href="/"> Home </a>
+        <a href="/about"> About </a>
+        <a href="#"> Developer </a>
+      </nav>
+    </div>
+
+    <div
+      class="flex lg:flex-row justify-evenly flex-col items-center gap-12 mb-6"
+    >
+      <div
+        class="w-9/12 p-6 max-w-sm bg-white border border-gray-200 rounded-lg shadow bg-white/40 isolate shadow-lg backdrop-blur-sm"
+      >
+        <div class="flex flex-col items-center">
+          <img
+            class="w-24 h-24 mb-3 rounded-full shadow-lg"
+            src="{{ url_for('static', filename='lucky.jpg') }}"
+            alt="Lakshay"
+          />
+          <h5 class="mb-1 text-xl font-medium text-gray-100">Lakshay Kumar</h5>
+          <p class="text-sm text-gray-200 px-8 text-center">
+            I am Lakshay Kumar, Collaborative ML Engineer. Passionate about
+            leveraging machine learning to solve real-world problems
+          </p>
+          <div class="flex w-1/2 justify-evenly mt-4 md:mt-6">
+            <a href="https://github.com/lakshay012"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+                id="Capa_1"
+                x="0px"
+                y="0px"
+                viewBox="0 0 24 24"
+                style="enable-background: new 0 0 24 24"
+                xml:space="preserve"
+                width="30"
+                height="30"
+              >
+                <g>
+                  <path
+                    style="fill-rule: evenodd; clip-rule: evenodd"
+                    d="M12,0.296c-6.627,0-12,5.372-12,12c0,5.302,3.438,9.8,8.206,11.387   c0.6,0.111,0.82-0.26,0.82-0.577c0-0.286-0.011-1.231-0.016-2.234c-3.338,0.726-4.043-1.416-4.043-1.416   C4.421,18.069,3.635,17.7,3.635,17.7c-1.089-0.745,0.082-0.729,0.082-0.729c1.205,0.085,1.839,1.237,1.839,1.237   c1.07,1.834,2.807,1.304,3.492,0.997C9.156,18.429,9.467,17.9,9.81,17.6c-2.665-0.303-5.467-1.332-5.467-5.93   c0-1.31,0.469-2.381,1.237-3.221C5.455,8.146,5.044,6.926,5.696,5.273c0,0,1.008-0.322,3.301,1.23   C9.954,6.237,10.98,6.104,12,6.099c1.02,0.005,2.047,0.138,3.006,0.404c2.29-1.553,3.297-1.23,3.297-1.23   c0.653,1.653,0.242,2.873,0.118,3.176c0.769,0.84,1.235,1.911,1.235,3.221c0,4.609-2.807,5.624-5.479,5.921   c0.43,0.372,0.814,1.103,0.814,2.222c0,1.606-0.014,2.898-0.014,3.293c0,0.319,0.216,0.694,0.824,0.576   c4.766-1.589,8.2-6.085,8.2-11.385C24,5.669,18.627,0.296,12,0.296z"
+                  />
+                  <path
+                    d="M4.545,17.526c-0.026,0.06-0.12,0.078-0.206,0.037c-0.087-0.039-0.136-0.121-0.108-0.18   c0.026-0.061,0.12-0.078,0.207-0.037C4.525,17.384,4.575,17.466,4.545,17.526L4.545,17.526z"
+                  />
+                  <path
+                    d="M5.031,18.068c-0.057,0.053-0.169,0.028-0.245-0.055c-0.079-0.084-0.093-0.196-0.035-0.249   c0.059-0.053,0.167-0.028,0.246,0.056C5.076,17.903,5.091,18.014,5.031,18.068L5.031,18.068z"
+                  />
+                  <path
+                    d="M5.504,18.759c-0.074,0.051-0.194,0.003-0.268-0.103c-0.074-0.107-0.074-0.235,0.002-0.286   c0.074-0.051,0.193-0.005,0.268,0.101C5.579,18.579,5.579,18.707,5.504,18.759L5.504,18.759z"
+                  />
+                  <path
+                    d="M6.152,19.427c-0.066,0.073-0.206,0.053-0.308-0.046c-0.105-0.097-0.134-0.234-0.068-0.307   c0.067-0.073,0.208-0.052,0.311,0.046C6.191,19.217,6.222,19.355,6.152,19.427L6.152,19.427z"
+                  />
+                  <path
+                    d="M7.047,19.814c-0.029,0.094-0.164,0.137-0.3,0.097C6.611,19.87,6.522,19.76,6.55,19.665   c0.028-0.095,0.164-0.139,0.301-0.096C6.986,19.609,7.075,19.719,7.047,19.814L7.047,19.814z"
+                  />
+                  <path
+                    d="M8.029,19.886c0.003,0.099-0.112,0.181-0.255,0.183c-0.143,0.003-0.26-0.077-0.261-0.174c0-0.1,0.113-0.181,0.256-0.184   C7.912,19.708,8.029,19.788,8.029,19.886L8.029,19.886z"
+                  />
+                  <path
+                    d="M8.943,19.731c0.017,0.096-0.082,0.196-0.224,0.222c-0.139,0.026-0.268-0.034-0.286-0.13   c-0.017-0.099,0.084-0.198,0.223-0.224C8.797,19.574,8.925,19.632,8.943,19.731L8.943,19.731z"
+                  />
+                </g>
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lakshay-kumar-8938ba266/?originalSubdomain=in"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="30"
+                height="30"
+                viewBox="0 0 50 50"
+              >
+                <path
+                  d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    <script>
+      let menu = document.getElementById("menu");
+      function show() {
+        menu.classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>
